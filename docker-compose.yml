@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  metabase:
+    image: metabase/metabase:latest
+    container_name: jaya_jaya_metabase
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      # --- PENTING: Konfigurasi Admin Awal ---
+      # Metabase akan menggunakan variabel ini untuk membuat akun admin
+      # saat pertama kali dijalankan.
+      MB_ADMIN_EMAIL: root@mail.com
+      MB_ADMIN_PASSWORD: root123
+    volumes:
+      # Mount folder 'data' dari direktori proyek Anda ke dalam container
+      - ./data:/data
