@@ -9,7 +9,7 @@ model = joblib.load('dropout_model.pkl')
 scaler = joblib.load('scaler.pkl')
 feature_names = joblib.load('feature_names.pkl')
 # Load dataframe original untuk mengidentifikasi kolom kategorikal dan numerik
-df = pd.read_csv('students_performance/data.csv', delimiter=';')
+df = pd.read_csv('data/data.csv', delimiter=';')
 df_prep = df.copy()
 
 # Identifikasi kolom kategorikal dan numerik dari logika notebook
