@@ -8,12 +8,16 @@ Jumlah dropout yang tinggi ini tentunya menjadi salah satu masalah yang besar un
 
 ## Permasalahan Bisnis
 
-Berdasarkan analisis data dari dataset yang diberikan, tingkat *dropout* mahasiswa mencapai **32,12%** (1.421 dari 4.424 mahasiswa). Angka ini sangat signifikan dan memerlukan perhatian serius.
+Permasalahan bisnis fundamental yang dihadapi oleh Jaya Jaya Institut adalah **tingkat *dropout* mahasiswa yang sangat tinggi**, yang berdasarkan analisis data historis mencapai **32,12%** (1.421 dari 4.424 total mahasiswa). Angka ini bukan sekadar statistik, melainkan sebuah indikator kritis yang menandakan adanya masalah sistemik dalam perjalanan pendidikan mahasiswa yang mengancam kesehatan dan keberlanjutan institusi.
 
-Permasalahan utama yang akan diselesaikan adalah:
-- Mengidentifikasi faktor-faktor kunci (akademik, finansial, demografis) yang paling signifikan yang mendorong mahasiswa untuk *dropout*.
-- Membangun model prediktif yang dapat mengidentifikasi mahasiswa berisiko tinggi sejak dini.
-- Merumuskan rekomendasi dan langkah-langkah yang dapat diimplementasikan oleh pihak institut untuk menekan angka *dropout*.
+Urgensi dari permasalahan ini dapat dijabarkan ke dalam beberapa risiko utama:
+
+* **Dampak Finansial Signifikan**: Setiap mahasiswa yang *dropout* merepresentasikan kehilangan pendapatan biaya kuliah (UKT) untuk semester-semester berikutnya. Dengan tingkat *dropout* mencapai sepertiga dari total mahasiswa, potensi kerugian finansial menjadi sangat besar dan dapat mengganggu stabilitas anggaran operasional serta rencana pengembangan institut di masa depan.
+* **Erosi Reputasi dan Daya Saing**: Tingkat *dropout* yang tinggi secara langsung merusak citra dan reputasi Jaya Jaya Institut di mata calon mahasiswa dan orang tua. Hal ini dapat menimbulkan persepsi bahwa institut gagal memberikan dukungan yang memadai atau memiliki lingkungan akademik yang tidak kondusif, sehingga menurunkan daya saingnya dibandingkan institusi pendidikan lain.
+* **Inefisiensi Alokasi Sumber Daya**: Investasi yang telah dikeluarkan untuk merekrut, menerima, dan mengorientasi setiap mahasiswa menjadi sia-sia ketika mereka tidak menyelesaikan studinya. Hal ini menciptakan inefisiensi dalam perencanaan kapasitas kelas, alokasi dosen, dan penyediaan fasilitas pendukung lainnya.
+* **Risiko Jangka Panjang**: Jika tidak ditangani secara serius, tren *dropout* yang tinggi dapat memicu siklus negatif: penurunan reputasi menyebabkan penurunan jumlah pendaftar berkualitas, yang pada akhirnya semakin memperburuk kondisi finansial dan akademik institusi.
+
+Saat ini, pihak manajemen belum memiliki pemahaman yang jelas dan terstruktur mengenai **akar penyebab** dari fenomena ini. Tanpa mengetahui faktor-faktor pendorong utama—apakah didominasi oleh kendala akademik, kesulitan finansial, atau faktor demografis—setiap upaya intervensi yang dilakukan akan bersifat reaktif dan tidak tepat sasaran, sehingga tidak efektif dalam menekan angka *dropout*.
 
 ## Cakupan Proyek
 
@@ -46,6 +50,11 @@ Cakupan dari proyek ini adalah sebagai berikut:
     pip install -r requirements.txt
     ```
 
+- **Akses Dashboard Streamlit**
+```bash
+streamlit run app.py
+```
+
 - **Akses Dashboard Metabase**
   **Prasyarat:**
     - [Docker](https://www.docker.com/products/docker-desktop/) terinstal dan sedang berjalan.
@@ -58,10 +67,7 @@ Cakupan dari proyek ini adalah sebagai berikut:
   2.  **Jalankan Metabase via Docker**
       Buka terminal atau command prompt Anda, lalu jalankan perintah berikut.
       ```bash
-      docker run -d -p 3000:3000 \
-        -v "$(pwd)/metabase.db.mv.db:/metabase.db/metabase.db.mv.db" \
-        --name metabase-proyek \
-        metabase/metabase
+      docker-compose up -d 
       ```
 
   3.  **Tunggu Metabase Siap**
