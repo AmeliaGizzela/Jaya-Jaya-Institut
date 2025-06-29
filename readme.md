@@ -51,9 +51,8 @@ Cakupan dari proyek ini adalah sebagai berikut:
     ```
 
 - **Akses Dashboard Streamlit**
-```bash
-streamlit run app.py
-```
+  Dasboard Streamlit dapat di akses melalui link berikut :
+  https://4cdstyo2b2u4xwewrwarhb.streamlit.app/
 
 - **Akses Dashboard Metabase**
   **Prasyarat:**
